@@ -10,3 +10,7 @@ accelerate
 rembg
 mediapipe
 opencv-python-headless
+onnxruntime
+
+# Testing
+pytest
