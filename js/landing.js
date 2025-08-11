@@ -44,6 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function handleFileUpload(file) {
+        const trainingField = document.getElementById('training-field');
+        const background = trainingField.value;
+
         if (!file.type.startsWith('image/')) {
             uploadStatus.textContent = 'Error: Please upload an image file (.png, .jpg).';
             uploadStatus.style.color = 'var(--error-color)';
@@ -58,13 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const client = new SpriteShiftClient('YOUR_API_KEY_HERE');
 
         try {
-            // Mocking the user ID for now
-            const response = await client.upload(file, 'user-123');
+            // In a real implementation, you would use the client like this:
+            /*
+            const response = await client.upload(file, 'user-123', { background: background });
+
+            // Redirect to the studio page with the real job ID
+            window.location.href = `studio.html?job_id=${response.job_id}`;
+            */
 
             // The real API call is mocked in apiClient.js for now.
             // For testing, we'll manually create a mock job_id.
             const mockJobId = "job-" + Date.now();
             sessionStorage.removeItem(`progress_${mockJobId}`); // Clear previous progress
+            sessionStorage.setItem(`background_${mockJobId}`, background); // Store background
 
             uploadStatus.textContent = 'Upload successful! Redirecting...';
             uploadStatus.style.color = 'var(--success-color)';

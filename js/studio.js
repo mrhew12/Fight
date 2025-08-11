@@ -11,6 +11,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const jobId = urlParams.get('job_id');
 
+    // Get background info
+    const backgroundInfo = document.getElementById('background-info');
+    const previewArea = document.getElementById('preview-area');
+    const background = sessionStorage.getItem(`background_${jobId}`);
+
+    if (background && background !== 'default') {
+        backgroundInfo.textContent = `Background: ${background.charAt(0).toUpperCase() + background.slice(1)}`;
+        previewArea.style.backgroundImage = `url('assets/backgrounds/${background}.png')`;
+        previewArea.style.backgroundSize = 'cover';
+        previewArea.style.backgroundPosition = 'center';
+    } else {
+        backgroundInfo.textContent = 'Using default background.';
+    }
+
     if (!jobId) {
         loadingStatus.textContent = 'Error: No job ID provided.';
         loadingStatus.style.color = 'var(--error-color)';
