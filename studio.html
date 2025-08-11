@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpriteShift AI - Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="/" class="logo">SpriteShift AI</a>
+        </nav>
+    </header>
+
+    <main class="studio-layout">
+        <section id="studio-main" class="studio-main-view">
+            <h2>Your Animated Character</h2>
+            <div id="preview-area" class="preview-area">
+                <!-- Live preview will be loaded here -->
+                <p id="loading-status">Processing your character... <span id="progress-percent">0</span>%</p>
+                <img id="preview-image" src="" alt="Character Preview" style="display: none;">
+            </div>
+        </section>
+
+        <aside id="studio-controls" class="studio-controls">
+            <h3>Animation Controls</h3>
+            <div id="animation-list" class="animation-list">
+                <!-- Animation names will be populated here -->
+            </div>
+            <div class="playback-controls">
+                <button id="play-pause-button">Play</button>
+                <label for="speed-control">Speed:</label>
+                <select id="speed-control">
+                    <option value="0.5">0.5x</option>
+                    <option value="1" selected>1x</option>
+                    <option value="2">2x</option>
+                </select>
+            </div>
+
+            <hr>
+
+            <h3>Export Options</h3>
+            <div class="export-options">
+                <label for="format-select">Format:</label>
+                <select id="format-select">
+                    <option value="spritesheet">Sprite Sheet (.png)</option>
+                    <option value="gif">GIF</option>
+                </select>
+
+                <label for="resolution-select">Resolution:</label>
+                <select id="resolution-select">
+                    <option value="720p">720p</option>
+                    <option value="1080p" disabled>1080p HD</option>
+                </select>
+                <a href="#pricing" class="upgrade-link">Upgrade to Pro</a>
+
+                <button id="export-button" class="cta-button" disabled>Download Assets</button>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 SpriteShift AI. All rights reserved.</p>
+    </footer>
+
+    <script src="js/apiClient.js"></script>
+    <script src="js/studio.js"></script>
+</body>
+</html>

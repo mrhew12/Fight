@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpriteShift AI - Animate Your Characters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <a href="/" class="logo">SpriteShift AI</a>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <h1>Animate Your Characters in Minutes, Not Months.</h1>
+            <p>Upload your static 2D character art and get game-ready animations powered by our advanced AI pipeline.</p>
+            <a href="#uploader" class="cta-button">Try for Free</a>
+        </section>
+
+        <section id="uploader" class="uploader-section">
+            <div class="uploader-column">
+                <h2>Upload Your Character</h2>
+                <div id="upload-area" class="upload-area">
+                    <p>Drag & drop your .png or .jpg file here</p>
+                    <p>or</p>
+                    <input type="file" id="image-upload" accept="image/png, image/jpeg">
+                    <label for="image-upload" class="file-label">Choose a file</label>
+                </div>
+                <p class="upload-text">Supports .png and .jpg files. Max size 10MB.</p>
+                <div id="upload-status"></div>
+            </div>
+            <div class="demo-column">
+                <h2>Live Demo</h2>
+                <div class="demo-preview">
+                    <img src="https://placehold.co/400x400?text=Sample\nCharacter" alt="Sample Character Animation">
+                </div>
+                <button id="animate-demo-button" class="cta-button">Animate</button>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2>How It Works</h2>
+            <!-- Add feature descriptions here -->
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <h2>Pricing</h2>
+            <div class="pricing-table">
+                <div class="pricing-tier">
+                    <h3>Free / Hobbyist</h3>
+                    <ul>
+                        <li>5 Renders per Month</li>
+                        <li>720p Resolution</li>
+                        <li>Watermarked Exports</li>
+                    </ul>
+                    <a href="#" class="cta-button-secondary">Sign Up</a>
+                </div>
+                <div class="pricing-tier pro-tier">
+                    <h3>Pro / Indie</h3>
+                    <ul>
+                        <li>Unlimited Renders</li>
+                        <li>1080p HD Resolution</li>
+                        <li>No Watermark</li>
+                        <li>Priority Queue</li>
+                    </ul>
+                    <a href="#" class="cta-button">Sign Up</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="final-cta" class="final-cta-section">
+            <h2>Ready to bring your characters to life?</h2>
+            <a href="#uploader" class="cta-button">Sign Up and Upload Your First Character</a>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <!-- FAQ content will go here -->
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2024 SpriteShift AI. All rights reserved.</p>
+        <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+    </footer>
+
+    <script src="js/apiClient.js"></script>
+    <script src="js/landing.js"></script>
+</body>
+</html>
