@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpriteShift AI - Animate Your Characters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,8 +23,13 @@
 
     <main>
         <section id="hero" class="hero-section">
-            <h1>Animate Your Characters in Minutes, Not Months.</h1>
-            <p>Upload your static 2D character art and get game-ready animations powered by our advanced AI pipeline.</p>
+            <div class="hero-background-orbs">
+                <div class="orb"></div>
+                <div class="orb"></div>
+                <div class="orb"></div>
+            </div>
+            <h1>Bring Your Art to Life.</h1>
+            <p>Transform static images into game-ready 2D sprites with AI-powered animation. No code, no complex software. Just your art, animated.</p>
             <a href="#uploader" class="cta-button">Try for Free</a>
         </section>
 
@@ -40,15 +48,37 @@
             <div class="demo-column">
                 <h2>Live Demo</h2>
                 <div class="demo-preview">
-                    <img src="https://placehold.co/400x400?text=Sample\nCharacter" alt="Sample Character Animation">
+                    <div class="demo-character-card">
+                        <div class="demo-character-placeholder"></div>
+                        <div class="demo-character-details">
+                            <div class="detail-line"></div>
+                            <div class="detail-line short"></div>
+                        </div>
+                    </div>
                 </div>
-                <button id="animate-demo-button" class="cta-button">Animate</button>
+                <button id="animate-demo-button" class="cta-button">Animate Demo</button>
             </div>
         </section>
 
         <section id="features" class="features-section">
             <h2>How It Works</h2>
-            <!-- Add feature descriptions here -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">1</div>
+                    <h3>Upload Your Art</h3>
+                    <p>Start by uploading a single PNG or JPG file of your character. Our AI works best with clean, clear character art.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">2</div>
+                    <h3>AI-Powered Animation</h3>
+                    <p>Our system analyzes your character, rigs it, and generates a full set of game-ready animations like idle, run, jump, and attack.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">3</div>
+                    <h3>Export & Integrate</h3>
+                    <p>Download the generated sprite sheets and animation data, ready to be dropped into your favorite game engine.</p>
+                </div>
+            </div>
         </section>
 
         <section id="pricing" class="pricing-section">
@@ -64,6 +94,7 @@
                     <a href="#" class="cta-button-secondary">Sign Up</a>
                 </div>
                 <div class="pricing-tier pro-tier">
+                    <div class="recommended-badge">Recommended</div>
                     <h3>Pro / Indie</h3>
                     <ul>
                         <li>Unlimited Renders</li>
