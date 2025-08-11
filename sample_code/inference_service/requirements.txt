@@ -1,0 +1,12 @@
+# Web server
+fastapi
+uvicorn
+
+# AI Models & Libraries
+torch
+diffusers
+transformers
+accelerate
+rembg
+mediapipe
+opencv-python-headless
