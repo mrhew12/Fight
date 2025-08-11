@@ -1,4 +1,4 @@
-# Architecture Design: SpriteShift AI
+# Architecture Design: SpriteShift AI (Sprint 1)
 
 ## 1. Architectural Overview
 

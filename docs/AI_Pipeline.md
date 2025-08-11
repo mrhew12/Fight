@@ -1,4 +1,4 @@
-# AI Pipeline Deep Dive: SpriteShift AI
+# AI Pipeline Deep Dive: SpriteShift AI (Sprints 3-4)
 
 ## 1. Introduction
 
