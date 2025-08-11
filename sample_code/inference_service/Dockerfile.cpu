@@ -1,0 +1,41 @@
+# Use a standard Python base image for a CPU-only build, which is much smaller.
+FROM python:3.10-slim
+
+# Set the shell to bash to allow for more advanced commands like process substitution.
+SHELL ["/bin/bash", "-c"]
+
+# Set environment variables to prevent buffering and interactive prompts.
+ENV PYTHONUNBUFFERED 1
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install essential system dependencies. ffmpeg is often required by media libraries.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set up the working directory inside the container.
+WORKDIR /app
+
+# Upgrade pip to the latest version.
+RUN pip install --no-cache-dir --upgrade pip
+
+# Install the CPU-only version of torch separately. This is the key change to
+# keep the image size manageable in environments without a GPU or with low disk space.
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+
+# Copy all local files from the build context (the inference_service directory)
+# into the container's working directory.
+COPY . .
+
+# Install the rest of the application's dependencies from requirements.txt.
+# We use `grep` to exclude the 'torch' line, as we have already installed it.
+# This prevents conflicts and ensures we use the CPU-only version.
+RUN pip install --no-cache-dir -r <(grep -v -E '^torch$' requirements.txt)
+
+# Expose the port the app runs on, making it accessible from outside the container.
+EXPOSE 8000
+
+# Define the command to run the application when the container starts.
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
